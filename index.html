@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delray Beach Smile Design | Implant Consultation</title>
+  <meta name="description" content="A modern implant consultation landing page for Delray Beach Smile Design." />
+  <style>
+    :root {
+      --ink: #102033;
+      --muted: #607086;
+      --line: #dfe8f2;
+      --brand: #027d8b;
+      --brand-dark: #075d68;
+      --accent: #f5b94b;
+      --bg: #f6fbff;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(16, 32, 51, 0.12);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(135deg, #f6fbff 0%, #eef8f9 48%, #fff8ea 100%);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 251, 255, 0.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(223, 232, 242, 0.85);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), #52c7ce);
+      color: white;
+      box-shadow: 0 10px 24px rgba(2, 125, 139, 0.25);
+      font-size: 22px;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      font-size: 15px;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .primary {
+      background: var(--brand);
+      color: white;
+      box-shadow: 0 12px 28px rgba(2, 125, 139, 0.22);
+    }
+
+    .primary:hover { background: var(--brand-dark); }
+
+    .secondary {
+      background: white;
+      color: var(--brand-dark);
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 46px;
+      align-items: center;
+      padding: 74px 0 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid rgba(2, 125, 139, .18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .7);
+      color: var(--brand-dark);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: .95;
+      letter-spacing: -0.065em;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 0 26px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 26px;
+    }
+
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .trust-card {
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 10px 28px rgba(16, 32, 51, .06);
+    }
+
+    .trust-card strong {
+      display: block;
+      font-size: 21px;
+      letter-spacing: -0.03em;
+    }
+
+    .trust-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, .86);
+      border: 1px solid rgba(223, 232, 242, .9);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .consult-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .smile-graphic {
+      height: 240px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 28% 35%, rgba(245, 185, 75, .55), transparent 28%),
+        radial-gradient(circle at 74% 28%, rgba(82, 199, 206, .58), transparent 30%),
+        linear-gradient(135deg, #e9fbfc, #ffffff 52%, #fff4d8);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .tooth {
+      width: 110px;
+      height: 132px;
+      background: white;
+      border-radius: 52% 52% 38% 38%;
+      position: relative;
+      box-shadow: inset 0 -18px 30px rgba(2, 125, 139, .08), 0 18px 42px rgba(16, 32, 51, .16);
+    }
+
+    .tooth:before,
+    .tooth:after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      width: 42px;
+      height: 58px;
+      background: white;
+      border-radius: 0 0 24px 24px;
+    }
+
+    .tooth:before { left: 18px; transform: rotate(8deg); }
+    .tooth:after { right: 18px; transform: rotate(-8deg); }
+
+    .badge {
+      position: absolute;
+      top: 42px;
+      right: 8px;
+      background: var(--ink);
+      color: white;
+      border-radius: 20px;
+      padding: 14px 16px;
+      box-shadow: 0 18px 38px rgba(16, 32, 51, .22);
+      max-width: 210px;
+      font-weight: 800;
+    }
+
+    .badge span {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      margin-top: 4px;
+      font-weight: 650;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .mini b { display: block; margin-bottom: 4px; }
+    .mini span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 52px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(16,32,51,.07);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(2, 125, 139, .1);
+      color: var(--brand-dark);
+      font-size: 23px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      letter-spacing: -0.025em;
+      font-size: 21px;
+    }
+
+    .card p { color: var(--muted); }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: start;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .step:before {
+      content: counter(step);
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--brand);
+      color: white;
+      font-weight: 900;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .form {
+      background: var(--ink);
+      color: white;
+      border-radius: 34px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .form h2 { color: white; margin-bottom: 10px; }
+    .form p { color: rgba(255,255,255,.72); margin-top: 0; }
+
+    label {
+      display: block;
+      font-weight: 800;
+      font-size: 13px;
+      margin: 14px 0 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: white;
+      border-radius: 16px;
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.55); }
+    select option { color: var(--ink); }
+    textarea { min-height: 110px; resize: vertical; }
+
+    .form .button {
+      width: 100%;
+      margin-top: 18px;
+      background: var(--accent);
+      color: #261a00;
+    }
+
+    .note {
+      margin-top: 12px;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+    }
+
+    .notice {
+      display: none;
+      margin-top: 14px;
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: rgba(6, 118, 71, .18);
+      color: #c9ffdf;
+      border: 1px solid rgba(201, 255, 223, .28);
+      font-weight: 750;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    details p { color: var(--muted); margin-bottom: 0; }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .navlinks { display: none; }
+      .hero, .split { grid-template-columns: 1fr; }
+      .visual { min-height: auto; }
+      .cards { grid-template-columns: 1fr; }
+      .trust { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Delray Beach Smile Design home">
+        <span class="mark">✦</span>
+        <span>Delray Beach<br />Smile Design</span>
+      </a>
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#benefits">Benefits</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a class="button primary" href="#consultation">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div>
+        <span class="eyebrow">Dental implant consultation in Delray Beach</span>
+        <h1>Restore your smile with a personalized implant plan.</h1>
+        <p>
+          Explore dental implant options, treatment timelines, and next steps with a consultation built around your goals, comfort, and long-term oral health.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#consultation">Request Consultation</a>
+          <a class="button secondary" href="#process">See How It Works</a>
+        </div>
+        <div class="trust">
+          <div class="trust-card">
+            <strong>3D</strong>
+            <span>guided planning</span>
+          </div>
+          <div class="trust-card">
+            <strong>1:1</strong>
+            <span>patient consults</span>
+          </div>
+          <div class="trust-card">
+            <strong>Local</strong>
+            <span>Delray Beach care</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="panel consult-card">
+          <div class="smile-graphic" aria-hidden="true">
+            <div class="tooth"></div>
+          </div>
+          <div class="badge">
+            Implant-ready smile planning
+            <span>Designed for function, comfort, and natural aesthetics.</span>
+          </div>
+          <h2 style="font-size:30px;margin:0 0 8px;">What your consultation covers</h2>
+          <p style="color:var(--muted);margin:0;">
+            A clear review of your current concerns, candidacy, imaging needs, estimated timeline, and treatment options.
+          </p>
+          <div class="mini-grid">
+            <div class="mini"><b>Missing teeth</b><span>Single or multiple tooth solutions</span></div>
+            <div class="mini"><b>Implant options</b><span>Personalized recommendations</span></div>
+            <div class="mini"><b>Smile goals</b><span>Natural-looking final result</span></div>
+            <div class="mini"><b>Timeline</b><span>Step-by-step treatment path</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for clarity before treatment starts.</h2>
+          <p>Dental implant care should feel understandable. This consultation helps you know what is possible, what to expect, and how to move forward confidently.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🦷</div>
+            <h3>Natural function</h3>
+            <p>Implants are designed to support chewing strength, smile confidence, and everyday comfort.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📋</div>
+            <h3>Clear treatment plan</h3>
+            <p>Review your recommended path, likely appointments, healing phases, and restorative options.</p>
+          </article>
+          <article class="card">
+            <div class="icon">✨</div>
+            <h3>Aesthetic focus</h3>
+            <p>Plan for a final result that complements your face, bite, gumline, and natural smile design.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Simple process</span>
+          <h2 style="margin-top:14px;">Your path from question to plan.</h2>
+          <p style="color:var(--muted);font-size:17px;">
+            Every patient starts from a different place. Your consultation helps identify the best next step for your health, budget, and smile goals.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <h3 style="margin:0 0 4px;">Share your goals</h3>
+              <p style="margin:0;color:var(--muted);">Tell us what bothers you, what you want restored, and your ideal outcome.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3 style="margin:0 0 4px;">Review candidacy</h3>
+              <p style="margin:0;color:var(--muted);">Discuss oral health, bone support, imaging needs, and possible treatment routes.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3 style="margin:0 0 4px;">Choose next steps</h3>
+              <p style="margin:0;color:var(--muted);">Leave with a clearer timeline, priorities, and consultation follow-up plan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation">
+      <div class="wrap split">
+        <div class="form">
+          <h2>Request an implant consultation</h2>
+          <p>Fill out the form and the team can follow up to schedule your visit.</p>
+          <form id="consultForm">
+            <label for="name">Full name</label>
+            <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+
+            <label for="need">What are you interested in?</label>
+            <select id="need" name="need">
+              <option>Single dental implant</option>
+              <option>Multiple missing teeth</option>
+              <option>Full-arch replacement</option>
+              <option>Second opinion</option>
+              <option>Not sure yet</option>
+            </select>
+
+            <label for="message">Anything we should know?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your goals, timing, or concerns."></textarea>
+
+            <button class="button" type="submit">Send Request</button>
+            <div class="notice" id="notice">Thanks — your request is ready. Connect this form to your scheduling or CRM tool before publishing.</div>
+            <div class="note">This demo form does not send data until connected to a backend, form service, or CRM.</div>
+          </form>
+        </div>
+
+        <div>
+          <div class="section-head" style="display:block;margin-bottom:18px;">
+            <span class="eyebrow">Patient questions</span>
+            <h2 style="margin-top:14px;">Common implant consultation questions.</h2>
+          </div>
+          <div class="faq" id="faq">
+            <details open>
+              <summary>Am I a candidate for dental implants?</summary>
+              <p>Many patients are candidates, but bone support, gum health, medical history, and treatment goals should be reviewed before making a recommendation.</p>
+            </details>
+            <details>
+              <summary>How long does treatment take?</summary>
+              <p>Timing varies by case. Some patients need extra preparation or healing time, while others can move through the process more quickly.</p>
+            </details>
+            <details>
+              <summary>Will the implant look natural?</summary>
+              <p>The final restoration is planned to blend with your smile, bite, facial features, and neighboring teeth.</p>
+            </details>
+            <details>
+              <summary>Can this replace dentures?</summary>
+              <p>Implant-supported options can improve stability and comfort for many denture patients. The right solution depends on your anatomy and goals.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> Delray Beach Smile Design. All rights reserved.</span>
+      <span>Dental implant consultation landing page.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("consultForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.getElementById("notice").style.display = "block";
+      event.currentTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  </script>
+</body>
+</html>

@@ -1017,7 +1017,13 @@ Error generating stack: `+e.message+`
 
     if (label.includes('launch clinic growth') || label.includes('sign up')) {
       event.preventDefault();
-      window.location.href = 'index.patientlyft-with-contact.html#patientlyft-info-signup';
+      const signupSection = document.getElementById('patientlyft-info-signup');
+      if (signupSection) {
+        signupSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#patientlyft-info-signup');
+      } else {
+        window.location.href = './index.html#patientlyft-info-signup';
+      }
       return;
     }
 

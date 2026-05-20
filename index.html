@@ -972,6 +972,27 @@ Error generating stack: `+e.message+`
         card.classList.add('pl-hero-moved-placeholder');
       }
     });
+
+    const budgetButton = Array.from(dock.querySelectorAll('button')).find(function (button) {
+      return (button.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase() === 'budget';
+    });
+    if (budgetButton) {
+      budgetButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        openPatientLyftNumberTab('07');
+      });
+    }
+  }
+
+  function openPatientLyftNumberTab(number) {
+    const targetTab = Array.from(document.querySelectorAll('button, a')).find(function (item) {
+      return !item.closest('.pl-hero-top-dock') && (item.textContent || '').replace(/\s+/g, '').trim() === number;
+    });
+
+    if (targetTab) {
+      targetTab.click();
+    }
   }
 
   window.addEventListener('load', function () {
@@ -1001,13 +1022,8 @@ Error generating stack: `+e.message+`
     }
 
     if (label === 'budget') {
-      const budgetTab = Array.from(document.querySelectorAll('button, a')).find(function (item) {
-        return (item.textContent || '').replace(/\s+/g, '').trim() === '07';
-      });
-      if (budgetTab) {
-        event.preventDefault();
-        budgetTab.click();
-      }
+      event.preventDefault();
+      openPatientLyftNumberTab('07');
     }
   });
 </script>

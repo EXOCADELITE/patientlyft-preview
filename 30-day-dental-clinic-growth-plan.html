@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="30-Day Dental Clinic Growth Plan for getting more new patient leads for implants, dentures, emergency dental, cleanings, and cosmetic dentistry."
+    />
+    <title>PatientLyft | 30-Day Dental Clinic Growth Plan</title>
+    <style>
+      :root {
+        --navy: #071b4d;
+        --teal: #00a7a7;
+        --aqua: #7de3e0;
+        --slate: #526079;
+        --soft: #f7fbfc;
+        --line: rgba(7, 27, 77, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--soft);
+        color: var(--navy);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .topbar {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        padding: 16px clamp(18px, 5vw, 52px);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+
+      .brand {
+        font-weight: 950;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      .nav-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill {
+        align-items: center;
+        border: 1px solid rgba(0, 167, 167, 0.2);
+        border-radius: 999px;
+        display: inline-flex;
+        font-size: 0.84rem;
+        font-weight: 900;
+        min-height: 42px;
+        padding: 0 16px;
+        text-decoration: none;
+      }
+
+      .pill.primary {
+        background: var(--teal);
+        color: #fff;
+      }
+
+      .hero {
+        background:
+          radial-gradient(circle at 80% 15%, rgba(125, 227, 224, 0.46), transparent 28%),
+          linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
+        padding: clamp(56px, 8vw, 112px) clamp(18px, 5vw, 52px) 56px;
+      }
+
+      .hero-inner {
+        display: grid;
+        gap: clamp(28px, 5vw, 64px);
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
+        margin: 0 auto;
+        max-width: 1220px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        color: var(--teal);
+        font-size: 0.78rem;
+        font-weight: 950;
+        letter-spacing: 0.16em;
+        margin: 0 0 16px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 6vw, 6rem);
+        letter-spacing: -0.045em;
+        line-height: 0.92;
+        margin: 0;
+        max-width: 780px;
+      }
+
+      .hero p {
+        color: var(--slate);
+        font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+        font-weight: 650;
+        line-height: 1.7;
+        margin: 24px 0 0;
+        max-width: 720px;
+      }
+
+      .hero-card {
+        background: #fff;
+        border: 1px solid rgba(0, 167, 167, 0.14);
+        border-radius: 28px;
+        box-shadow: 0 30px 90px rgba(7, 27, 77, 0.13);
+        padding: clamp(22px, 4vw, 34px);
+      }
+
+      .hero-card h2 {
+        font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+        line-height: 1.08;
+        margin: 0;
+      }
+
+      .service-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .service-list span {
+        background: #f2ffff;
+        border: 1px solid rgba(0, 167, 167, 0.18);
+        border-radius: 999px;
+        font-weight: 850;
+        padding: 10px 14px;
+      }
+
+      .section {
+        padding: 34px clamp(18px, 5vw, 52px);
+      }
+
+      .section-inner {
+        margin: 0 auto;
+        max-width: 1220px;
+      }
+
+      .week {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        box-shadow: 0 18px 52px rgba(7, 27, 77, 0.08);
+        margin-bottom: 22px;
+        overflow: hidden;
+      }
+
+      .week-header {
+        align-items: center;
+        background: linear-gradient(90deg, var(--navy), #073b72);
+        color: #fff;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        padding: 24px clamp(20px, 4vw, 32px);
+      }
+
+      .week-header h2 {
+        font-size: clamp(1.45rem, 2.3vw, 2.15rem);
+        margin: 0;
+      }
+
+      .week-header p {
+        color: rgba(255, 255, 255, 0.76);
+        font-weight: 700;
+        margin: 6px 0 0;
+      }
+
+      .days {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .day {
+        border-top: 1px solid var(--line);
+        padding: 22px clamp(20px, 4vw, 30px);
+      }
+
+      .day:nth-child(odd) {
+        border-right: 1px solid var(--line);
+      }
+
+      .day h3 {
+        font-size: 1.04rem;
+        margin: 0 0 10px;
+      }
+
+      .day p,
+      .day li {
+        color: var(--slate);
+        font-size: 0.96rem;
+        font-weight: 650;
+        line-height: 1.58;
+      }
+
+      .day p {
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .cta {
+        background: var(--navy);
+        border-radius: 28px;
+        color: #fff;
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr auto;
+        margin: 10px auto 64px;
+        max-width: 1220px;
+        padding: clamp(24px, 4vw, 38px);
+        align-items: center;
+      }
+
+      .cta h2 {
+        font-size: clamp(1.65rem, 3vw, 2.6rem);
+        line-height: 1.04;
+        margin: 0;
+      }
+
+      .cta p {
+        color: rgba(255, 255, 255, 0.76);
+        font-weight: 650;
+        line-height: 1.6;
+        margin: 10px 0 0;
+      }
+
+      @media (max-width: 820px) {
+        .hero-inner,
+        .days,
+        .cta {
+          grid-template-columns: 1fr;
+        }
+
+        .day:nth-child(odd) {
+          border-right: 0;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav-actions {
+          width: 100%;
+        }
+
+        .pill {
+          justify-content: center;
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.patientlyft-with-contact.html">PatientLyft</a>
+      <nav class="nav-actions" aria-label="Plan navigation">
+        <a class="pill" href="index.patientlyft-with-contact.html#competitive-analysis">Competitive Analysis</a>
+        <a class="pill primary" href="index.patientlyft-with-contact.html#patientlyft-info-signup">Sign Up</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">30-Day Dental Clinic Growth Plan</p>
+            <h1>Turn local attention into booked patient appointments.</h1>
+            <p>
+              A practical 30-day plan to get more new patient leads, especially for implants,
+              dentures, emergency dental, cleanings, and cosmetic dentistry.
+            </p>
+          </div>
+          <aside class="hero-card">
+            <h2>Best services to scale first</h2>
+            <div class="service-list" aria-label="Best services to scale first">
+              <span>Dental implants</span>
+              <span>Dentures</span>
+              <span>Emergency dental</span>
+              <span>Cosmetic dentistry</span>
+              <span>New patient exams</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <article class="week">
+            <div class="week-header">
+              <div>
+                <h2>Week 1: Set Up the Foundation</h2>
+                <p>Build the offer, landing page, lead storage, follow-up, and tracking.</p>
+              </div>
+            </div>
+            <div class="days">
+              <div class="day"><h3>Day 1: Pick the main offer</h3><p>Choose one strong offer such as Free Implant Consultation, $99 New Patient Exam + X-rays, Emergency Dental Same-Day Appointments, or Denture Help Consultation.</p></div>
+              <div class="day"><h3>Day 2: Build the landing page</h3><p>Create a simple page with clinic name, main offer, services checklist, patient form, phone number, Book Appointment button, reviews, before/after proof, and doctor photo.</p></div>
+              <div class="day"><h3>Day 3: Set up lead storage</h3><p>Save every lead into Supabase: full name, phone, email, service selected, preferred appointment date, message, and lead source.</p></div>
+              <div class="day"><h3>Day 4: Create ads</h3><p>Make three simple campaigns for implant patients, denture patients, and emergency dental patients.</p></div>
+              <div class="day"><h3>Day 5: Create follow-up scripts</h3><p>Prepare text message, phone call, email, and missed call follow-up scripts.</p></div>
+              <div class="day"><h3>Day 6: Set up tracking</h3><p>Track leads, calls, booked appointments, show-ups, and closed treatment plans.</p></div>
+              <div class="day"><h3>Day 7: Test everything</h3><p>Submit a test lead and confirm the form works, the lead saves in Supabase, the clinic gets notified, and the patient gets confirmation.</p></div>
+            </div>
+          </article>
+
+          <article class="week">
+            <div class="week-header">
+              <div>
+                <h2>Week 2: Launch the Campaign</h2>
+                <p>Start local ads, post useful content, contact every lead fast, and review early results.</p>
+              </div>
+            </div>
+            <div class="days">
+              <div class="day"><h3>Day 8: Start Facebook and Instagram ads</h3><p>Target people near the clinic interested in dental implants, loose dentures, missing teeth, emergency pain, and smile makeover services.</p></div>
+              <div class="day"><h3>Day 9: Launch Google Search ads</h3><p>Use high-intent keywords like dentist near me, dental implants near me, emergency dentist, dentures near me, and tooth pain help.</p></div>
+              <div class="day"><h3>Day 10: Post on social media</h3><p>Post a doctor intro, patient problem, service explanation, offer, and reviews.</p></div>
+              <div class="day"><h3>Day 11: Add transportation message</h3><p>Add: “Need help getting to your appointment? Ask us about ride support options.”</p></div>
+              <div class="day"><h3>Day 12: Call every lead fast</h3><p>Every lead should be contacted within 5 minutes.</p></div>
+              <div class="day"><h3>Day 13: Retarget website visitors</h3><p>Show ads again to people who visited but did not book.</p></div>
+              <div class="day"><h3>Day 14: Review results</h3><p>Check which ads got leads, which services got interest, and which leads booked.</p></div>
+            </div>
+          </article>
+
+          <article class="week">
+            <div class="week-header">
+              <div>
+                <h2>Week 3: Improve and Scale</h2>
+                <p>Cut weak campaigns, strengthen winners, and improve the landing page.</p>
+              </div>
+            </div>
+            <div class="days">
+              <div class="day"><h3>Day 15: Turn off weak ads</h3><p>Stop ads that are not getting leads.</p></div>
+              <div class="day"><h3>Day 16: Improve best ads</h3><p>Make more versions of the winning ad.</p></div>
+              <div class="day"><h3>Day 17: Add denture-focused campaign</h3><p>Target people tired of loose dentures, painful dentures, trouble eating, embarrassment smiling, and denture glue.</p></div>
+              <div class="day"><h3>Day 18: Add implant education post</h3><p>Explain: “Implants can help replace missing teeth and make eating easier.”</p></div>
+              <div class="day"><h3>Day 19: Add reviews/testimonials</h3><p>Use real patient reviews if allowed.</p></div>
+              <div class="day"><h3>Day 20: Improve landing page</h3><p>Make the page easier with bigger buttons, a shorter form, a clear service checklist, and a strong call-to-action.</p></div>
+              <div class="day"><h3>Day 21: Review bookings</h3><p>Track how many leads became appointments.</p></div>
+            </div>
+          </article>
+
+          <article class="week">
+            <div class="week-header">
+              <div>
+                <h2>Week 4: Close More Patients</h2>
+                <p>Improve follow-up, reminders, financing language, and the next month’s growth plan.</p>
+              </div>
+            </div>
+            <div class="days">
+              <div class="day"><h3>Day 22: Add missed-lead follow-up</h3><p>Follow up with leads who did not answer: Day 1 text, Day 2 call, Day 3 email, and Day 5 final text.</p></div>
+              <div class="day"><h3>Day 23: Add financing message</h3><p>Use simple wording: “Monthly payment options may be available.”</p></div>
+              <div class="day"><h3>Day 24: Create patient FAQ</h3><p>Answer cost, implant comfort, denture help, emergency patient availability, and online booking questions.</p></div>
+              <div class="day"><h3>Day 25: Train front desk</h3><p>Make sure staff knows how to answer lead calls, explain the offer, book quickly, and reduce no-shows.</p></div>
+              <div class="day"><h3>Day 26: Send reminders</h3><p>Send appointment reminders 24 hours before, the morning of appointment, and 2 hours before.</p></div>
+              <div class="day"><h3>Day 27: Push strongest offer</h3><p>Put the best offer on the website, ads, social posts, and Google Business Profile.</p></div>
+              <div class="day"><h3>Day 28: Review numbers</h3><p>Look at total leads, cost per lead, appointments booked, patients showed, and revenue opportunities.</p></div>
+              <div class="day"><h3>Day 29: Make next month plan</h3><p>Keep what worked. Remove what did not.</p></div>
+              <div class="day"><h3>Day 30: Scale</h3><p>Increase budget only on what is working, starting with implants, dentures, emergency dental, cosmetic dentistry, and new patient exams.</p></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta">
+          <div>
+            <h2>Ready to turn this plan into a working campaign?</h2>
+            <p>Select the services you want to discuss and PatientLyft will help map the next step.</p>
+          </div>
+          <a class="pill primary" href="index.patientlyft-with-contact.html#patientlyft-info-signup">Start Sign Up</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
